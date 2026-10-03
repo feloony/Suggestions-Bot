@@ -1,89 +1,79 @@
 # Discord Suggestions Bot
 
-A feature-rich Discord bot that enables users to submit, discuss, and vote on suggestions, helping create a more community-driven server experience.
+A community-focused Discord bot for collecting, discussing, voting on, and managing server suggestions.
 
-## Features
+## ✨ Features
 
-- **Suggestion Submissions**: Users can submit suggestions, optionally categorized or anonymous, directly within Discord.
-- **Voting and Discussion**: Each suggestion has its own voting (👍/👎) and discussion thread.
-- **Suggestion Management**: Admins can review, accept, or reject suggestions.
-- **User Commands**: Users can view their suggestion history, search suggestions, and edit their past suggestions.
-- **Top Suggestions**: Displays the most popular suggestions based on upvotes within a specified timeframe.
-- **Statistics**: Provides statistics on the number of suggestions, including counts of accepted, pending, and rejected suggestions.
-- **Categories**: List available suggestion categories for organized submissions.
-- **Rate Limiting**: Ensures users don’t spam suggestions, with cooldowns managed per user.
+- 💡 Submit suggestions directly in Discord
+- 👍👎 Community voting
+- 💬 Suggestion discussion threads
+- 🛡️ Admin approval and rejection workflows
+- 📚 Suggestion history and search
+- 🏆 Popular/top suggestions
+- 📊 Server suggestion statistics
+- 🗂️ Suggestion categories
+- ⏱️ Per-user rate limiting
+- 📝 Configurable suggestion limits
 
-## Installation
+## 🧰 Requirements
 
-### Prerequisites
+- Python 3.x
+- Discord bot token
+- MongoDB
+- A Discord application with the required bot permissions
 
-- Node.js (v16 or higher)
-- Python (for Discord bot code)
-- Discord Bot Token
-- MongoDB database (for suggestion data storage)
+> Check the repository dependencies and configuration files before deployment; the project may evolve beyond the original setup documented here.
 
-### Setting Up
+## 🚀 Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/feloony/Suggestions-Bot.git
-   cd Suggestions-Bot
-   ```
+```bash
+git clone https://github.com/feloony/Suggestions-Bot.git
+cd Suggestions-Bot
+pip install -r requirements.txt
+```
 
-2. Install Python dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+Create a `.env` file with your bot configuration:
 
-3. Set up your environment variables in a `.env` file:
-   ```env
-   DISCORD_TOKEN=
-   COMMAND_PREFIX=
-   MAX_SUGGESTION_LENGTH=
-   RATE_LIMIT_DURATION=
-   MAX_SUGGESTIONS_PER_USER=
-   ```
+```env
+DISCORD_TOKEN=
+COMMAND_PREFIX=
+MAX_SUGGESTION_LENGTH=
+RATE_LIMIT_DURATION=
+MAX_SUGGESTIONS_PER_USER=
+```
 
-4. Start the bot:
-   ```bash
-   python bot.py
-   ```
+Start the bot:
 
-## Commands Overview
+```bash
+python bot.py
+```
 
-### User Commands
+## 📋 Commands
 
-- `/suggest <text>` - Submit a new suggestion. Options for category and anonymity.
-- `/mysuggestions` - View your past suggestions.
-- `/edit <suggestion_id> <new_text>` - Edit a previous suggestion.
-- `/search <query>` - Search suggestions by text query.
-- `/top <timeframe>` - View top suggestions within a specified timeframe (e.g., day, week, all).
-- `/categories` - View available categories for suggestions.
-- `/stats` - View suggestion statistics for the server.
+### User
 
-### Admin Commands
+- `/suggest <text>` — submit a suggestion
+- `/mysuggestions` — view your suggestions
+- `/edit <suggestion_id> <new_text>` — edit a suggestion
+- `/search <query>` — search suggestions
+- `/top <timeframe>` — view popular suggestions
+- `/categories` — list categories
+- `/stats` — view suggestion statistics
 
-- Suggestion management options available through direct interaction with suggestion embeds (approve/reject).
+Administrative actions are available through the suggestion management workflow.
 
-## Configuration
+## 🗄️ Data
 
-- **Rate Limiting**: Configure the maximum number of suggestions per user and time limits in the `Config` file.
-- **Suggestion Length**: Define maximum suggestion length in `Config`.
-- **Category Management**: Add, remove, and manage suggestion categories in the database.
+MongoDB stores suggestion records, voting information, statuses, categories, and user suggestion history.
 
-## Database Structure
+Never commit bot tokens, database credentials, or other secrets to the repository.
 
-- Stores suggestion details, voting counts, user suggestion history, and channels for suggestion threads.
-- Tracks suggestion status (pending, approved, rejected) and user voting history.
+## 🤝 Contributing
 
-## Contributing
+Fork the repository, create a focused branch, test your changes, and open a pull request with a clear explanation.
 
-Contributions are welcome! Please open an issue or pull request for any bug fixes, feature additions, or improvements.
+## 📄 License
 
-## License
+MIT License. See [`LICENSE`](LICENSE).
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## Support
-
-For issues or questions, open an issue on this repository, or reach out on Discord.
+⭐ If this bot is useful for your community, consider starring the repository.
